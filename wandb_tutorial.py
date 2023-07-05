@@ -79,7 +79,7 @@ def seed_worker(worker_id):
 
 # Load MNIST
 def main(args):
-    ### YOUR CODE HERE (3 lines)
+    ### YOUR CODE HERE
     ### TODO:
     # Set random seed for python, numpy and torch (random seed = 133)
     
@@ -100,7 +100,7 @@ def main(args):
     optimizer = torch.optim.SGD(model.parameters(), lr=lr)
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, 0.99999999)
     # wandb instantiation
-    ### YOUR CODE HERE (1 line)
+    ### YOUR CODE HERE 
     ### TODO:
     # sign in to wandb and activate on your shell
     # initialize wandb with following arguments:
@@ -191,7 +191,7 @@ def main(args):
             accumulated_step += 1
             if not step % config["save_interval"]:
                 print("***** Saving fine - tuned model at {} *****".format(step))
-                ### YOUR CODE HERE (3~7 lines)
+                ### YOUR CODE HERE 
                 ### TODO:
                 # Save your model
                 # ToDo:
@@ -208,7 +208,7 @@ def main(args):
 
         print("***** Saving fine - tuned model *****")
         epoch_output_folder_path = os.path.join(
-        model_output_path, "epochs/epoch_{}".format(epoch)
+        model_output_path, "epoch_{}".format(epoch)
     )
         torch.save({
         'epoch': epoch,
@@ -217,7 +217,7 @@ def main(args):
         'step': step,
         }, epoch_output_folder_path)
         # track metric in wandb
-        ### YOUR CODE HERE (~3 lines)
+        ### YOUR CODE HERE
         ### TODO:
         # keep track of train_loss, epoch, and learning rate
         # wandb.log: https://docs.wandb.ai/ref/python/init
